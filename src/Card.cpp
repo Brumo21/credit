@@ -6,7 +6,7 @@ Card::Card(l_long num) {
 
 Card::~Card() 
 {
-
+    
 }
 
 template <class T>
@@ -22,18 +22,17 @@ int Card::_get_number_length(T n) {
 
 std::string Card::get_card_company() {
     int card_len = this->_get_number_length(this->_card_number);
+    int first_two = this->_card_number / pow(10, card_len - 2);
 
     if (card_len == 13 || card_len == 16) {
-        l_long temp = this->_card_number / pow(10, card_len - 2);
-
-        if ((temp % 100) / 10 == 4) {
+        if (first_two / 10 == 4) {
             return "VISA";
-        } else if (temp >= 51 && temp <= 55) {
+        } else if (first_two >= 51 && first_two <= 55) {
             return "MASTERCARD";
         } else {
             return "INVALID";
         }
-    } else if (card_len == 15) {
+    } else if (card_len == 15 && (first_two == 34 || first_two == 37)) {
         return "AMEX";
     } else {
         return "INVALID";

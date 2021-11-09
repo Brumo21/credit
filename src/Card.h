@@ -9,8 +9,8 @@ public:
     bool is_valid();
     std::string get_card_company();
 
-
 private: 
+
     l_long _card_number;
     
     template <class T>
