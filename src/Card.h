@@ -11,7 +11,7 @@ public:
 
 private: 
 
-    l_long _card_number;
+    l_long m_card_number;
     
     template <class T>
     static int _get_number_length(T);

@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    Card card = Card(card_number);
+    Card card(card_number);
     
     if (card.is_valid()) {
         std::cout << card.get_card_company() << std::endl;
