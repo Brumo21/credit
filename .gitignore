@@ -1,5 +1,5 @@
 bin/
 obj/
 .vscode/
-/.replit
-/.breakpoints
+./.replit
+./.breakpoints
